@@ -1,0 +1,29 @@
+::placeholder {
+  color: #fff;
+  opacity: 0.5;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+.home-section {
+  position: relative;
+}
+
+input {
+  background-color: rgb(65, 103, 175, 0.9);
+  min-width: 97%;
+  padding: 1.5%;
+  color: #fff;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  opacity: 0.9;
+}
