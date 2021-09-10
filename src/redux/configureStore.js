@@ -1,26 +1,8 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
-import coinsReducer from './coins/coins';
+import { configureStore } from '@reduxjs/toolkit';
+import reducer from './coins/coins';
 
-const persistConfig = {
-  key: 'root',
-  storage,
-};
-
-const reducer = combineReducers({
-  coins: coinsReducer,
+const store = configureStore({
+  reducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, reducer);
-
-const store = createStore(
-  persistedReducer,
-  applyMiddleware(thunk, logger),
-);
-
-const persistor = persistStore(store);
-
-export { store, persistor };
+export default store;
