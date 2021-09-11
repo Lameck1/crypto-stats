@@ -1,77 +1,82 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import {
   FaRegArrowAltCircleRight, FaAngleLeft, FaMicrophone, FaRegSun,
 } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
+import { getCoinById } from '../../redux/coins/coins';
 import Header from '../header/Header';
 import Banner from '../banner/Banner';
 import './Details.css';
 
 const Details = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const coin = useSelector((state) => state.coins.filter((coin) => coin.id === id));
+  const { selected } = useSelector((state) => state);
 
-  const { icon, name, priceInUSD } = coin[0];
+  useEffect(() => {
+    dispatch(getCoinById(id));
+  }, []);
 
   return (
     <section className="details-section">
-      <Header
-        backIcon={<FaAngleLeft />}
-        text={`${name} stats`}
-        micIcon={<FaMicrophone />}
-        settingsIcon={<FaRegSun />}
-      />
-      <Banner
-        logo={icon}
-        coinName={name}
-        coinStat={priceInUSD}
-        info="Market Price (USD): "
-        details
-      />
-      <div className="heading">
-        <h5>{`${name} today's live stats`.toLocaleUpperCase()}</h5>
-      </div>
-
-      {coin.map(({
-        rank, volume, marketCap, priceInBitcoin, hourlyPriceChange,
+      {selected.map(({
+        icon, name, priceInUSD, rank, volume, marketCap, priceInBitcoin, hourlyPriceChange,
       }) => (
-        <ul key={rank} className="coin-stats">
-          <li className="stat">
-            <span>Rank</span>
-            <div>
-              <span>{rank}</span>
-              <FaRegArrowAltCircleRight />
-            </div>
-          </li>
-          <li className="stat">
-            <span>Volume</span>
-            <div>
-              <span>{volume.toFixed(2)}</span>
-              <FaRegArrowAltCircleRight />
-            </div>
-          </li>
-          <li className="stat">
-            <span>Market Cap</span>
-            <div>
-              <span>{marketCap.toFixed(2)}</span>
-              <FaRegArrowAltCircleRight />
-            </div>
-          </li>
-          <li className="stat">
-            <span>Price in Bitcoin</span>
-            <div>
-              <span>{priceInBitcoin.toFixed(2)}</span>
-              <FaRegArrowAltCircleRight />
-            </div>
-          </li>
-          <li className="stat">
-            <span>Hourly Price Change</span>
-            <div>
-              <span>{hourlyPriceChange.toFixed(2)}</span>
-              <FaRegArrowAltCircleRight />
-            </div>
-          </li>
-        </ul>
+        <div key="details">
+          <Header
+            key="header"
+            backIcon={<FaAngleLeft />}
+            text={`${name} stats`}
+            micIcon={<FaMicrophone />}
+            settingsIcon={<FaRegSun />}
+          />
+          <Banner
+            key="banner"
+            logo={icon}
+            coinName={name}
+            coinStat={priceInUSD}
+            info="Market Price (USD): "
+            details
+          />
+          <ul key="coinStats" className="coin-stats">
+            <li className="stat" key={`rank-${rank}`}>
+              <span>Rank</span>
+              <div>
+                <span>{rank}</span>
+                <FaRegArrowAltCircleRight />
+              </div>
+            </li>
+            <li className="stat" key={volume}>
+              <span>Volume</span>
+              <div>
+                <span>{volume.toFixed(2)}</span>
+                <FaRegArrowAltCircleRight />
+              </div>
+            </li>
+            <li className="stat" key={marketCap}>
+              <span>Market Cap</span>
+              <div>
+                <span>{marketCap.toFixed(2)}</span>
+                <FaRegArrowAltCircleRight />
+              </div>
+            </li>
+            <li className="stat" key={priceInBitcoin}>
+              <span>Price in Bitcoin</span>
+              <div>
+                <span>{priceInBitcoin.toFixed(2)}</span>
+                <FaRegArrowAltCircleRight />
+              </div>
+            </li>
+            <li className="stat" key={hourlyPriceChange}>
+              <span>Hourly Price Change</span>
+              <div>
+                <span>{hourlyPriceChange.toFixed(2)}</span>
+                <FaRegArrowAltCircleRight />
+              </div>
+            </li>
+          </ul>
+        </div>
       ))}
     </section>
   );
