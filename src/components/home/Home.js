@@ -11,10 +11,7 @@ import './Home.css';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const coins = useSelector((state) => state.coins);
-
-  const bitcoin = coins.filter((coin) => coin.id === 'bitcoin')[0];
-  const { icon, name, priceInUSD } = bitcoin;
+  const { coins } = useSelector((state) => state);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -25,7 +22,7 @@ const Home = () => {
 
   useEffect(() => {
     if (!coins.length) {
-      dispatch(getCoins);
+      dispatch(getCoins());
     }
   }, []);
 
@@ -38,10 +35,10 @@ const Home = () => {
 
   const today = new Date();
   const [day, month, year] = [today.getDate(), today.getMonth(), today.getFullYear()];
-  const date = `${day}/${month}/${year}`;
+  const date = `${day}.${month}.${year}`;
 
   return (
-    <section className="home-section">
+    <section>
       <Header
         backIcon={<FaAngleLeft />}
         date={date}
@@ -50,14 +47,12 @@ const Home = () => {
         settingsIcon={<FaRegSun />}
       />
       <Banner
-        logo={icon}
-        coinName={name}
-        coinStat={priceInUSD}
+        logo="https://static.coinstats.app/coins/Bitcoin6l39t.png"
+        coinName="Bitcoin"
+        coinStat={46313.68}
         info="Market Leader at: "
+        details={false}
       />
-      <div className="heading">
-        <h5>MARKET PRICE PER CRYPTOCURRENCY (USD)</h5>
-      </div>
       <input
         type="text"
         placeholder="Filter by currency name..."
@@ -65,11 +60,10 @@ const Home = () => {
         onChange={handleChange}
       />
       <List
-        coins={searchResults}
+        coins={!searchResults.length ? coins : searchResults}
         arrowIcon={<FaRegArrowAltCircleRight />}
       />
     </section>
-
   );
 };
 
