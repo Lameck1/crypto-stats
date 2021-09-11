@@ -42,15 +42,15 @@ const Home = () => {
       <Header
         backIcon={<FaAngleLeft />}
         date={date}
-        text="All stats"
+        text="Crypto Stats"
         micIcon={<FaMicrophone />}
         settingsIcon={<FaRegSun />}
       />
       <Banner
-        logo="https://static.coinstats.app/coins/Bitcoin6l39t.png"
-        coinName="Bitcoin"
+        logo="https://res.cloudinary.com/dssc4mht3/image/upload/v1631322600/banner-img-crypto_a3cma6.png"
+        coinName="CRYPTO-STATS"
         coinStat={46313.68}
-        info="Market Leader at: "
+        info="Current market Leader - Bitcon: at "
         details={false}
       />
       <input
