@@ -14,7 +14,7 @@ export const fetchCoin = async (id) => {
     method: 'GET',
     redirect: 'follow',
   };
-  const response = await fetch(`https://api.coinstats.app/public/v1/coins/${id}`, requestOptions);
+  const response = await fetch(`https://api.coinstats.app/public/v1/coins/${!id ? 'bitcoin' : id}`, requestOptions);
   const result = await response.json();
   const { coin } = result;
   return [coin];
