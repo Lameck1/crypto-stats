@@ -22,9 +22,9 @@ svg {
   color: #fff;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1024px) {
   #root {
-    width: 600px;
+    width: 28vw;
     margin: 0 auto;
   }
 }
