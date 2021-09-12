@@ -39,6 +39,9 @@ const Details = () => {
             info="Market Price (USD): "
             details
           />
+          <div className="heading">
+            <h5>{`${name} today's live stats`.toLocaleUpperCase()}</h5>
+          </div>
           <ul key="coinStats" className="coin-stats">
             <li className="stat" key={`rank-${rank}`}>
               <span>Rank</span>

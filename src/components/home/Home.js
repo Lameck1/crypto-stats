@@ -51,6 +51,9 @@ const Home = () => {
         info="Current market Leader - Bitcon: at "
         details={false}
       />
+      <div className="heading">
+        <h5>MARKET PRICE PER CRYPTOCURRENCY (USD)</h5>
+      </div>
       <input
         type="text"
         placeholder="Filter by currency name..."
