@@ -5,7 +5,6 @@
 }
 
 .logo {
-  filter: brightness(50%) grayscale(100%) opacity(0.9);
   position: absolute;
   left: 15px;
   top: 15px;

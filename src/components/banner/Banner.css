@@ -3,10 +3,6 @@
   background-color: #5081dd;
 }
 
-.banner-logo {
-  filter: brightness(50%) grayscale(100%) opacity(0.9);
-}
-
 .banner-section,
 .banner-logo-div,
 .banner-details-div,
