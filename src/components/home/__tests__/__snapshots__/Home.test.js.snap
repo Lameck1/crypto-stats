@@ -30,7 +30,7 @@ Object {
               </svg>
             </a>
             <span>
-              12.8.2021
+              13.8.2021
             </span>
           </div>
           <div
@@ -99,6 +99,13 @@ Object {
             </span>
           </div>
         </section>
+        <div
+          class="heading"
+        >
+          <h5>
+            MARKET PRICE PER CRYPTOCURRENCY (USD)
+          </h5>
+        </div>
         <input
           placeholder="Filter by currency name..."
           type="text"
@@ -136,7 +143,7 @@ Object {
             </svg>
           </a>
           <span>
-            12.8.2021
+            13.8.2021
           </span>
         </div>
         <div
@@ -205,6 +212,13 @@ Object {
           </span>
         </div>
       </section>
+      <div
+        class="heading"
+      >
+        <h5>
+          MARKET PRICE PER CRYPTOCURRENCY (USD)
+        </h5>
+      </div>
       <input
         placeholder="Filter by currency name..."
         type="text"
