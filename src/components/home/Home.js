@@ -21,9 +21,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!coins.length) {
-      dispatch(getCoins());
-    }
+    dispatch(getCoins());
   }, []);
 
   useEffect(() => {
@@ -60,7 +58,7 @@ const Home = () => {
         onChange={handleChange}
       />
       <List
-        coins={!searchResults.length ? coins : searchResults}
+        coins={searchTerm ? searchResults : coins}
         arrowIcon={<FaRegArrowAltCircleRight />}
       />
     </section>
