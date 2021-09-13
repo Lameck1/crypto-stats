@@ -1,44 +1,100 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Crypto Stats
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Table of Contents](#table-of-contents)
+- [About Project](#about-project)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [API Interactions](#api-interactions)
+- [Contributing](#contributing)
+- [Author](#author)
+- [Acknowledgements](#acknowledgements)
+- [Show your support](#show-your-support)
 
-### `npm start`
+## About Project
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+"Crypto Stats" is a web application that keeps track of cryptocurrency statistics. This application presents a user with a list of cryptocurrencies sorted in the order of their current market prices. A user can then click on one of othe currencies to be directed to a details page with more stats on that particular cryptocurrency.
+This project uses [Coinstats API](https://documenter.getpostman.com/view/5734027/RzZ6Hzr3?version=latest) which is a public REST API for information on cryptocurrencies.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![screenshot](./src/images/assets/screenshot.png)
 
-### `npm test`
+### [Live Demo - Netlify](https://crypto-statistics.netlify.app/)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### [Project Presentation - YouTube](https://youtu.be/NV_9kst9jqk)
 
-### `npm run build`
+## Built With
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ReactJS
+- Redux
+- [Coinstats API](https://documenter.getpostman.com/view/5734027/RzZ6Hzr3?version=latest)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone this repo <https://github.com/Lameck1/crypto-stats>
 
-### `npm run eject`
+    ```bash
+    git clone https://github.com/Lameck1/crypto-stats.git
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Navigate to crypto-stats folder/directory
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    cd crypto-stats
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- On the comandline, at the project's root, run ```npm install``` to install app dependencies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Next, run ```npm start``` which will run the app in the development mode.
 
-## Learn More
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- ALTERNATIVELY
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - Just run ```npm run build``` which will build the project and generate output files into the ```build``` directory.
+
+  - Go to ```build``` directory and manually open ```index.html``` to interact with the app
+
+- Run ```npm run test``` to run tests.
+
+## API Interactions
+
+From Coinstats API, this app/project is interacting/consuming the following endpoints:
+
+- **Base URL** - <https://api.coinstats.app/public/v1>
+- **Fetching and Loading Coins - Method(GET)** - <https://api.coinstats.app/public/v1/coins>
+- **Fetching and Loading a Coin by id i.e. "bitcoin"- Method(GET)** - <https://api.coinstats.app/public/v1/bitcoin>
+
+Take a look at the [DOCUMENTATION](https://documenter.getpostman.com/view/5734027/RzZ6Hzr3?version=latest) for further insights.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Lameck1/crypto-stats/issues)
+
+  1. Fork the Project
+  2. Create your Feature Branch (`git checkout -b feature/newFeature`)
+  3. Commit your Changes (`git commit -m 'Add some newFeature'`)
+  4. Push to the Branch (`git push -u origin feature/newFeature`)
+  5. Open a Pull Request
+
+## Author
+
+👤 **Lameck Otieno**
+
+- GitHub: [@githubhandle](https://github.com/Lameck1)
+- Twitter: [@twitterhandle](https://twitter.com/lameck721)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lameck-odhiambo-642b7077/)
+- Portfolio: [Portfolio](https://lameck.me)
+
+## Acknowledgements
+
+- [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) from <https://www.behance.net/> for the awesome design that this project is based on.
+- **Developers at <https://coinstats.app/>** for the API that this project consumes.
+- [ReactJS Organization](https://reactjs.org/) for the amazing [Documentation](https://reactjs.org/docs/getting-started.html) on React.
+- [Redux Organization](https://redux.js.org/) for the amazing [Redux Essentials Tutorial](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) on Redux.
+
+## Show your support
+
+Give a ⭐️ if you like this project!
