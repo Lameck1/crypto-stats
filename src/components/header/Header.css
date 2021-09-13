@@ -1,0 +1,33 @@
+.brand-logo,
+.header-text,
+.mic-settings,
+.brand-logo > a,
+header {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  justify-content: space-between;
+  padding: 15px 10px;
+  background-color: #294f98;
+}
+
+.brand-logo,
+.header-text,
+.mic-settings {
+  color: #fff;
+}
+
+.brand-logo > a svg {
+  height: 1.2em !important;
+  width: 1.2em !important;
+}
+
+.header-text {
+  opacity: 0.7;
+}
+
+.mic-settings > svg:nth-child(2) {
+  padding-left: 20px;
+}
