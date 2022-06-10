@@ -13,7 +13,7 @@
 
 ## About Project
 
-"Crypto Stats" is a web application that keeps track of cryptocurrency statistics. This application presents a user with a list of cryptocurrencies sorted in the order of their current market prices. A user can then click on one of othe currencies to be directed to a details page with more stats on that particular cryptocurrency.
+"Crypto Stats" is a web application that keeps track of cryptocurrency statistics. This application presents a user with a list of cryptocurrencies sorted in the order of their current market prices. A user can then click on one of the currencies to be directed to a details page with more stats on that particular cryptocurrency.
 This project uses [Coinstats API](https://documenter.getpostman.com/view/5734027/RzZ6Hzr3?version=latest) which is a public REST API for information on cryptocurrencies.
 
 ![screenshot](./src/assets/images/screenshot.png)
